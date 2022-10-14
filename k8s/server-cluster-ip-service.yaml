@@ -1,0 +1,12 @@
+# selector is going to tell this service excatly what set of pods its suppose to provide access to 
+apiVersion: v1
+kind: Service
+metadata: 
+  name: server-cluster-ip-service
+spec:
+  type: ClusterIP
+  selector:
+    component: server
+  ports:
+    - port: 5000
+      targetPort: 5000
